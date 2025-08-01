@@ -1,0 +1,146 @@
+/* Basic setup and background */
+body {
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #ccc;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1{ 
+    font-size: 9rem;
+    color: #2980b9;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background: radial-gradient(circle, rgba(150, 150, 150, 0.2) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+/* The main circular board */
+.simon-board {
+    width: 400px;
+    height: 400px;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+    /* 3D effect using box-shadow */
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.5), 
+        inset 0 5px 15px rgba(255,255,255,0.1),
+        inset 0 -5px 15px rgba(0,0,0,0.6);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px; /* This creates the space between buttons */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for each colored button */
+.button {
+    background-color: #999;
+    border: 5px solid #222; /* Dark border for depth */
+    box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.3), /* Inner highlight */
+                inset 0 -5px 10px rgba(0, 0, 0, 0.4);   /* Inner shadow */
+    cursor: pointer;
+    transition: all 0.1s ease; /* Smooth transition for all effects */
+}
+
+/* When a button is actively being pressed */
+.button:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* The visual "flash" effect when a button lights up */
+.button.lit {
+    filter: brightness(2.5);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    transform: scale(1.03);
+}
+
+/* Specific colors and border-radius for each quadrant */
+.red {
+    background-color: #c0392b;
+    border-radius: 100% 0 0 0;
+}
+.green {
+    background-color: #27ae60;
+    border-radius: 0 100% 0 0;
+}
+.blue {
+    background-color: #2980b9;
+    border-radius: 0 0 0 100%;
+}
+.yellow {
+    background-color: #f1c40f;
+    border-radius: 0 0 100% 0;
+}
+
+/* The circle in the middle */
+.center-hub {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #7f8c8d;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid #34495e;
+    box-shadow: 
+        inset 0 0 20px rgba(0,0,0,0.7),
+        0 2px 5px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* So it's clear the center is clickable */
+}
+
+/* "Simon" text style */
+.brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    color: #576574;
+    font-weight: bold;
+    /* Engraved text effect */
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), -1px -1px 1px rgba(0, 0, 0, 0.6);
+}
+
+/* UI text at the bottom */
+.ui-text {
+    position: absolute;
+    bottom: 30px;
+    font-size: 20px;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: #bdc3c7;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.quit {
+    left: 40px;
+    cursor: pointer;
+}
+
+.score-board {
+    right: 40px;
+    text-align: right;
+}
+
+.score-board p {
+    margin: 0;
+    line-height: 1.2;
+}
