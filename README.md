@@ -16,7 +16,8 @@ Applications:
 
 Enhances short-term memory and focus.
 
-Used in both entertainment and educational contexts.
+Used in both entertainment and educational contexts..
+
 
 Popular in web-based and hardware implementations.
 
