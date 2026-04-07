@@ -8,26 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Simon Game </h1>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-brand">Simon Game</h2>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-to-play">How to Play</a></li>
+                <li><a href="#score">Score</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="game-container">
-        <div class="simon-board">
-            <div class="button red" data-color="red"></div>
-            <div class="button green" data-color="green"></div>
-            <div class="button blue" data-color="blue"></div>
-            <div class="button yellow" data-color="yellow"></div>
+    <main id="home">
+        <h1>Simon Game</h1>
 
-            <div class="center-hub">
-                <div class="brand-name">Simon</div>
+        <section id="how-to-play" class="instructions">
+            <h2>How to Play</h2>
+            <p>Watch the sequence of colors light up. Repeat the sequence by clicking the buttons in the same order. Each round adds one more color to remember!</p>
+        </section>
+
+        <div class="game-container">
+            <div class="simon-board">
+                <div class="button red" data-color="red"></div>
+                <div class="button green" data-color="green"></div>
+                <div class="button blue" data-color="blue"></div>
+                <div class="button yellow" data-color="yellow"></div>
+
+                <div class="center-hub">
+                    <div class="brand-name">Simon</div>
+                </div>
+            </div>
+
+            <div class="ui-text quit">quit</div>
+            <div class="ui-text score-board" id="score">
+                <p>score: 0</p>
+                <p>highest: 6</p>
             </div>
         </div>
+    </main>
 
-        <div class="ui-text quit">quit</div>
-        <div class="ui-text score-board">
-            <p>score: 0</p>
-            <p>highest: 6</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Simon Game. All rights reserved.</p>
+            <p>Enjoy the classic memory game!</p>
         </div>
-    </div>
+    </footer>
+
     <script src="app.js"></script>
 
 </body>
